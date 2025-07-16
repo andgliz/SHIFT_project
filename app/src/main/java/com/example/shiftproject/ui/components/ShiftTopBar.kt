@@ -1,4 +1,4 @@
-package com.example.shiftproject.ui
+package com.example.shiftproject.ui.components
 
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api

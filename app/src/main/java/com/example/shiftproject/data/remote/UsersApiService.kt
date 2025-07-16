@@ -1,6 +1,5 @@
-package com.example.shiftproject.data
+package com.example.shiftproject.data.remote
 
-import com.example.shiftproject.data.model.Results
 import retrofit2.http.GET
 import retrofit2.http.Query
 

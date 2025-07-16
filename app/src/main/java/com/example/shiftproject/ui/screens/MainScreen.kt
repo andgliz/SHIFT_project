@@ -10,26 +10,25 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.shiftproject.ui.AppViewModelProvider
 import com.example.shiftproject.ui.ShiftUiState
 
-
 @Composable
 fun MainScreen(
     viewModel: UsersViewModel = viewModel(factory = AppViewModelProvider.Factory),
     modifier: Modifier = Modifier,
 ) {
     Surface(
-        modifier = modifier.fillMaxSize()
+        modifier = modifier.fillMaxSize(),
     ) {
         val shiftUiState by viewModel.uiState.collectAsState()
 
         when (shiftUiState) {
             is ShiftUiState.Loading -> {
                 LoadingScreen(
-                    modifier = modifier
+                    modifier = modifier,
                 )
             }
 
             is ShiftUiState.Success -> {
-                UsersScreen(
+                UserListScreen(
                     userList = (shiftUiState as ShiftUiState.Success).userList,
                     onUserCardClick = viewModel::selectUser,
                     onIconButtonClick = viewModel::getNewUsersList,
@@ -38,7 +37,7 @@ fun MainScreen(
             }
 
             is ShiftUiState.SelectUser -> {
-                UserCard(
+                UserScreen(
                     user = (shiftUiState as ShiftUiState.SelectUser).user,
                     onIconButtonClick = viewModel::backToList,
                 )
@@ -47,10 +46,9 @@ fun MainScreen(
             else -> {
                 ErrorScreen(
                     retryAction = viewModel::getUsers,
-                    modifier = modifier.fillMaxSize()
+                    modifier = modifier.fillMaxSize(),
                 )
             }
         }
     }
-
 }

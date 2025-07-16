@@ -2,8 +2,9 @@ package com.example.shiftproject.ui.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.shiftproject.data.datasource.ShiftRepository
-import com.example.shiftproject.data.model.User
+import com.example.shiftproject.domain.ShiftRepository
+import com.example.shiftproject.data.local.UserEntity
+import com.example.shiftproject.domain.User
 import com.example.shiftproject.ui.ShiftUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

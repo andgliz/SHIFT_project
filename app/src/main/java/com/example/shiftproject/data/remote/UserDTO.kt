@@ -1,36 +1,36 @@
-package com.example.shiftproject.data.model
+package com.example.shiftproject.data.remote
 
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class Results(
-    val results: List<UserSer>,
+    val results: List<UserDTO>,
 )
 
 @Serializable
-data class UserSer(
+data class UserDTO(
     val gender: String,
-    val name: NameSer,
-    val location: LocationSer,
+    val name: Name,
+    val location: Location,
     val email: String,
-    val login: LoginSer,
+    val login: Login,
     val phone: String,
     val cell: String,
-    val picture: PictureSer,
+    val picture: Picture,
     val nat: String,
-    val dob: DobSer,
+    val dob: Dob,
 )
 
 @Serializable
-data class NameSer(
+data class Name(
     val title: String,
     val first: String,
     val last: String,
 )
 
 @Serializable
-data class LocationSer(
-    val street: StreetSer,
+data class Location(
+    val street: Street,
     val city: String,
     val state: String,
     val country: String,
@@ -38,25 +38,25 @@ data class LocationSer(
 )
 
 @Serializable
-data class StreetSer(
+data class Street(
     val number: Int,
     val name: String,
 )
 
 @Serializable
-data class LoginSer(
-    val uuid: String
+data class Login(
+    val uuid: String,
 )
 
 @Serializable
-data class PictureSer(
+data class Picture(
     val large: String,
     val medium: String,
     val thumbnail: String,
 )
 
 @Serializable
-data class DobSer(
+data class Dob(
     val date: String,
     val age: Int,
 )

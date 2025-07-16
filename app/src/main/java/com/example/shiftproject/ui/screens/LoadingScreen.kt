@@ -16,6 +16,6 @@ fun LoadingScreen(
     Image(
         modifier = modifier.size(200.dp),
         painter = painterResource(R.drawable.loading_img),
-        contentDescription = stringResource(R.string.loading)
+        contentDescription = stringResource(R.string.loading),
     )
 }

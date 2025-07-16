@@ -1,12 +1,11 @@
-package com.example.shiftproject.data
+package com.example.shiftproject.data.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.shiftproject.data.model.User
 
-@Database(entities = [User::class], version = 1, exportSchema = false)
+@Database(entities = [UserEntity::class], version = 1, exportSchema = false)
 abstract class ShiftDatabase : RoomDatabase() {
 
     abstract fun shiftDao(): ShiftDao

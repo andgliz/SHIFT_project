@@ -1,6 +1,4 @@
-package com.example.shiftproject.data.datasource
-
-import com.example.shiftproject.data.model.User
+package com.example.shiftproject.domain
 
 interface ShiftRepository {
     suspend fun getNewUserList(): List<User>

@@ -1,8 +1,10 @@
 package com.example.shiftproject.data
 
 import android.content.Context
-import com.example.shiftproject.data.datasource.ShiftRepository
-import com.example.shiftproject.data.offlinerepository.OfflineShiftRepository
+import com.example.shiftproject.domain.ShiftRepository
+import com.example.shiftproject.data.local.ShiftDatabase
+import com.example.shiftproject.data.repository.ShiftRepositoryImpl
+import com.example.shiftproject.data.remote.UsersApiService
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -25,7 +27,7 @@ class AppDataContainer(private val context: Context) : AppContainer {
     }
 
     override val shiftRepository: ShiftRepository by lazy {
-        OfflineShiftRepository(ShiftDatabase.getDatabase(context).shiftDao(), retrofitService)
+        ShiftRepositoryImpl(ShiftDatabase.getDatabase(context).shiftDao(), retrofitService)
     }
 
     private val retrofit = Retrofit.Builder()
