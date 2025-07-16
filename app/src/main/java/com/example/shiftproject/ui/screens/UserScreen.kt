@@ -73,7 +73,7 @@ fun UserScreen(
                     ) {
                         UserMainInfo(
                             userName = "${user.name} ${user.lastName}",
-                            modifier = Modifier.padding(start = 16.dp),
+                            modifier = Modifier,
                             horizontal = Alignment.CenterHorizontally,
                             firstInfoField = "${user.gender}, ${user.age} years old",
                             secondInfoField = "Nationality: ${user.nationality}",
